@@ -5,7 +5,7 @@ Description-based image search based on the paper 'Skip-Thought Vectors' by Kiro
 
 ### Getting started
 
-1. In order for this code to run, you must clone the skip-thoughts repo:
+1. In order for this code to run, you must clone the skip-thoughts repo:  
     https://github.com/ryankiros/skip-thoughts
 
   1. As per the readme in the skip-thoughts repo, you must download the pretrained skip-thoughts model parameters
@@ -13,11 +13,11 @@ Description-based image search based on the paper 'Skip-Thought Vectors' by Kiro
 
   2. In addition, (as per the skip-thoughts readme) you must edit the skipthoughts.py file to use the correct paths to models and data.
 
-2. In addition, to use this code, you must download the weights for VGG16 from here:
+2. In addition, to use this code, you must download the weights for VGG16 from here:  
     https://gist.github.com/baraldilorenzo/07d7802847aaad0a35d3
 
 3. In addition, to train the model for embedding ConvNet codes and Skip-Thought Vectors into the same space,
-   you must download the MS COCO images and annotations from here:
+   you must download the MS COCO images and annotations from here:  
     http://mscoco.org/dataset/#download
 
 4. Finally, you must edit the first code snippet in thoughtvec-imagesearch.ipynb to point to the correct paths for
