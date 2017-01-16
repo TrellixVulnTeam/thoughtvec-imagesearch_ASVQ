@@ -2,6 +2,16 @@
 
 Description-based image search based on the paper 'Skip-Thought Vectors' by Kiros et al.
 
+### Release notes
+
+Please note that even though we know this approach works (cf. Kiros et al 2015),
+my use and implementation of Kiros' image-sentence ranking model is still a work in progress. 
+
+In particular: 
+  1. there are some performance issues caused by interfacing with Kiros' implementation, 
+  2. parts of my own code need to be cleaned up, 
+  3. parts of Kiros' code and my own could benefit from being jointly refactored to improve performance,
+  4. parts of Kiros' code appear to provide different performance statistics than my own.
 
 ### Getting started
 
