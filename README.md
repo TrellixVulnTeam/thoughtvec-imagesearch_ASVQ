@@ -2,9 +2,9 @@
 
 Description-based image search based on the paper 'Skip-Thought Vectors' by Kiros et al.
 
-### Release notes
+## Release notes
 
-Please note that even though we know this approach works (cf. Kiros et al 2015),
+Please note that even though we know this approach works (Cf. Kiros et al. 2015),
 my use and implementation of Kiros' image-sentence ranking model is still a work in progress. 
 
 In particular: 
@@ -16,7 +16,7 @@ In particular:
      VGG16 expects a different image shape than the MS COCO images possess.  
      As a result, my implementation may differ from the implementation used by Kiros et al. 2015.  
 
-### Getting started
+## Getting started
 
 1. In order for this code to run, you must clone the skip-thoughts repo:  
     https://github.com/ryankiros/skip-thoughts
@@ -39,7 +39,7 @@ In particular:
   3. the model directory for *your* models (which ideally will not the same dir as for the skipthoughts model directory).
 
 
-### Reference
+## Reference
 
 If you use this program, please cite these papers in your readme:
 
