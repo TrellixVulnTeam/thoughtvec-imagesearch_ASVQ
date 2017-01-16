@@ -21,9 +21,9 @@ Description-based image search based on the paper 'Skip-Thought Vectors' by Kiro
     http://mscoco.org/dataset/#download
 
 4. Finally, you must edit the first code snippet in thoughtvec-imagesearch.ipynb to point to the correct paths for
-   (i)   the VGG16 weights, 
-   (ii)  the directory for the MS COCO data,
-   (iii) the model directory for *your* models (which ideally will not the same dir as for the skipthoughts model directory).
+  1. the VGG16 weights, 
+  2. the directory for the MS COCO data,
+  3. the model directory for *your* models (which ideally will not the same dir as for the skipthoughts model directory).
 
 
 ### Reference
