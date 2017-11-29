@@ -18,13 +18,14 @@ class SentenceEvaluator():
             self.model = biskip.model
 
     def evaluate(self, sentence):
+        if self.model is None:
+            self.materialize()
         thoughtvec = self.model.encode([sentence])
         return np.squeeze(thoughtvec, axis=0)
 
     def evaluate_batch(self, batch_of_sentences):
         if self.model is None:
             self.materialize()
-
         batch_of_thoughtvecs = self.model.encode(batch_of_sentences)
         return batch_of_thoughtvecs
 
