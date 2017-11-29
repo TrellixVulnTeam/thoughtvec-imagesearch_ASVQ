@@ -10,10 +10,10 @@ class ImageEvaluator():
     def __init__(self):
         config = configparser.ConfigParser()
         config.read('.models')
-        self.model_params_url = config.get('vgg19', 'params_url')
+        self.model_params_url = config.get('vgg19', 'model_params_url')
 
-        self.model_params_dir = 'models/tensorflow_oxfordnet/'
-        self.model_params_file = 'vgg19.npy'
+        self.model_params_dir = config.get('vgg19', 'model_params_dir')
+        self.model_params_file = config.get('vgg19', 'model_params_file')
         self.model = None
         self.input_ = None
 
@@ -67,7 +67,7 @@ class ImageEvaluator():
             return batch_of_imgvec
 
 if __name__=='__main__':
-
+    
     fp1 = '/Users/lucaslingle/git/thoughtvec-imagesearch/test_image/dog_on_a_bench.png'
     fp2 = '/Users/lucaslingle/git/thoughtvec-imagesearch/test_image/cat.jpg'
 
