@@ -14,7 +14,7 @@ In particular:
   4. My code appears to provide different performance statistics than Kiros' code.
   5. My implementation of the ConvNet uses a resize-and-pad approach.  
      VGG16 expects a different image shape than the MS COCO images possess.  
-     As a result, my implementation may differ from the implementation used by Kiros et al. 2015.  
+     This implementation may differ from the implementation used by Kiros et al. 2015.  
 
 ## Getting started
 
