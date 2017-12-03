@@ -1,3 +1,4 @@
+from __future__ import print_function
 import configparser
 from models.tensorflow_oxfordnet import vgg19, utils
 
@@ -10,28 +11,29 @@ class ImageEvaluator():
     def __init__(self):
         config = configparser.ConfigParser()
         config.read('.models')
-        self.model_params_url = config.get('vgg19', 'params_url')
+        self.model_params_url = config.get('vgg19', 'model_params_url')
 
-        self.model_param_dir = 'models/tensorflow_oxfordnet/'
-        self.model_param_file = 'vgg19.npy'
+        self.model_params_dir = config.get('vgg19', 'model_params_dir')
+        self.model_params_file = config.get('vgg19', 'model_params_file')
         self.model = None
         self.input_ = None
 
     def download_params(self):
-        if not os.path.exists(self.model_param_dir):
-            os.makedirs(self.model_param_dir)
+        if not os.path.exists(self.model_params_dir):
+            os.makedirs(self.model_params_dir)
 
-        model_params_fp = os.path.join(self.model_param_dir, self.model_param_file)
+        model_params_fp = os.path.join(self.model_params_dir, self.model_params_file)
 
         if not os.path.isfile(model_params_fp):
             urlretrieve(self.model_params_url, model_params_fp)
 
     def materialize(self):
-        self.download_params()
-        self.model = vgg19.Vgg19()
-        self.input_ = tf.placeholder(tf.float32, [None, 224, 224, 3])
-        with tf.name_scope("content_vgg"):
-            self.model.build(self.input_)
+        if self.model is None:
+            self.download_params()
+            self.model = vgg19.Vgg19()
+            self.input_ = tf.placeholder(tf.float32, [None, 224, 224, 3])
+            with tf.name_scope("content_vgg"):
+                self.model.build(self.input_)
 
     def get_formatted_image(self, image_fp):
         img = utils.load_image(image_fp)

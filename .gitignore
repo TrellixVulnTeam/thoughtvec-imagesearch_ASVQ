@@ -3,6 +3,12 @@
 data/*
 datasets/*
 .ipynb_checkpoints/
+*.tar
+*.gz
+skip_thoughts_uni_*
+skip_thoughts_bi_*
+*.ckpt
+*.ckpt-*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
