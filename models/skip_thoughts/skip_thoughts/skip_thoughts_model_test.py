@@ -22,8 +22,8 @@ from __future__ import print_function
 import numpy as np
 import tensorflow as tf
 
-from skip_thoughts import configuration
-from skip_thoughts import skip_thoughts_model
+from models.skip_thoughts.skip_thoughts import configuration
+from models.skip_thoughts.skip_thoughts import skip_thoughts_model
 
 
 class SkipThoughtsModel(skip_thoughts_model.SkipThoughtsModel):

@@ -1,7 +1,8 @@
+from __future__ import print_function
 import numpy as np
 
-from .SentenceEncoderUniSkip import *
-from .SentenceEncoderBiSkip import *
+from SentenceEncoderUniSkip import *
+from SentenceEncoderBiSkip import *
 
 class SentenceEvaluator():
     def __init__(self):
@@ -10,11 +11,15 @@ class SentenceEvaluator():
 
     def materialize(self):
         if self.model is None:
+
             encoder = encoder_manager.EncoderManager()
+
             uniskip = SentenceEncoderUniSkip()
             uniskip.materialize(encoder_mgr=encoder)
+            
             biskip = SentenceEncoderBiSkip()
             biskip.materialize(encoder_mgr=uniskip.model)
+
             self.model = biskip.model
 
     def evaluate(self, sentence):
@@ -43,3 +48,4 @@ if __name__=='__main__':
 
     s12vecs = sentenceevaluator.evaluate_batch([s1, s2])
     print(s12vecs)
+    print(s12vecs.shape)

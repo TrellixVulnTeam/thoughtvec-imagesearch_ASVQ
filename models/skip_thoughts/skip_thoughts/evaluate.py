@@ -40,8 +40,8 @@ from skipthoughts import eval_sick
 from skipthoughts import eval_trec
 import tensorflow as tf
 
-from skip_thoughts import configuration
-from skip_thoughts import encoder_manager
+from models.skip_thoughts.skip_thoughts import configuration
+from models.skip_thoughts.skip_thoughts import encoder_manager
 
 FLAGS = tf.flags.FLAGS
 

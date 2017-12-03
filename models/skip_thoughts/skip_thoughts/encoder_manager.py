@@ -36,7 +36,7 @@ import collections
 import numpy as np
 import tensorflow as tf
 
-from skip_thoughts import skip_thoughts_encoder
+from models.skip_thoughts.skip_thoughts import skip_thoughts_encoder
 
 
 class EncoderManager(object):
@@ -61,15 +61,15 @@ class EncoderManager(object):
         containing a checkpoint file.
     """
     tf.logging.info("Reading vocabulary from %s", vocabulary_file)
-    with tf.gfile.GFile(vocabulary_file, mode="r") as f:
+    with tf.gfile.GFile(vocabulary_file, mode="rb") as f:
       lines = list(f.readlines())
-    reverse_vocab = [line.decode("utf-8").strip() for line in lines]
+    reverse_vocab = [line.decode("utf-8", errors='ignore').strip() for line in lines]
     tf.logging.info("Loaded vocabulary with %d words.", len(reverse_vocab))
 
     tf.logging.info("Loading embedding matrix from %s", embedding_matrix_file)
     # Note: tf.gfile.GFile doesn't work here because np.load() calls f.seek()
     # with 3 arguments.
-    with open(embedding_matrix_file, "r") as f:
+    with open(embedding_matrix_file, "rb") as f:
       embedding_matrix = np.load(f)
     tf.logging.info("Loaded embedding matrix with shape %s",
                     embedding_matrix.shape)

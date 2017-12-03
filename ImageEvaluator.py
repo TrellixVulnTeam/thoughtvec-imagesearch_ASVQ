@@ -1,3 +1,4 @@
+from __future__ import print_function
 import configparser
 from models.tensorflow_oxfordnet import vgg19, utils
 
@@ -67,7 +68,7 @@ class ImageEvaluator():
             return batch_of_imgvec
 
 if __name__=='__main__':
-    
+
     fp1 = '/Users/lucaslingle/git/thoughtvec-imagesearch/test_image/dog_on_a_bench.png'
     fp2 = '/Users/lucaslingle/git/thoughtvec-imagesearch/test_image/cat.jpg'
 
